@@ -12,20 +12,17 @@ function clock() {
     let m = d.getMinutes();
     let s = d.getSeconds();
     let ap;
+    ap = h >= 12 ? `PM` : `AM`;
 
-    if (h > 12) {
-        if (h == 0) {
-            h = `00`;
-            today();
-        }
-        else {
+    if (h == 0) {
+        h = `00`;
+        today();
+    }
+    else if (h > 12) {
             h -= 12
-        }
     }
 
     h = h < 10 ? `0${h}` : h;
-
-    ap = h >= 12 ? `PM` : `AM`;
 
     m = m < 10 ? `0${m}` : m;
 
